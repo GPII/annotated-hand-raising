@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title> LAYOUT TESTING PAGE </title>
+		<link rel="stylesheet" type="text/css" href="stylesheets/tohru.css">
+	</head>
+	<body>
+		<div id="origin">
+			<p>[WELCOME SCREEN]</p>
+			<div class="logomain">
+				<img class="logoimg" src="./images/TOHRU_Hand_crop.png" height=80>
+				<div class="logotext">
+					<div class="logotitle">
+						TOHRU - Trace Online
+					</div>
+					<div class="logobottom">
+						Hand Raising Utility
+					</div>
+				</div>
+			</div>
+			
+			
+			<h1>WELCOME TO TOHRU</h1>
+			<br/>
+			<br/>
+			<h1>
+				To Enter a Meeting:
+			</h1>
+			<div class="indent">
+			<p>
+				Meeting ID:
+				<br/>
+			<input class="entryfield" type="text" id="meetingfield" value="UserInfo.meeting">
+			</p>
+			<p>
+				Your Name (plus affiliation):
+				<br/>
+			<input class="entryfield" type="text" id="namefield" value="UserInfo.name">
+			</p>
+			<p>
+				<button onclick="WelcomeScreen.join();">
+					Enter as Participant
+				</button>
+				<button onclick="WelcomeScreen.modpass();">
+					Enter as Moderator
+				</button>
+			</p>
+			<br/>
+			<br/>
+			<p>
+				TOHRU is a hand-raising utility created by the Trace Center (U of Wisconsin) and hosted by the Raising the Floor Consortium. It is free to use but contributions are welcome. Versions that can operate behind firewalls are available.
+			</p>
+			</div>
+			<br/>
+			<br/>
+			<hr/>
+			<h1>
+				To Create a Meeting:
+			</h1>
+			<div class="indent">
+			<p>
+				NOTE: Meetings must be created prior to use.
+			</p>
+			<button onclick="WelcomeScreen.create();">
+				Create a Meeting
+			</button>
+			</div>
+			<p>[WELCOME SCREEN]</p>
+			<p>[MODPASS SCREEN]</p>
+			<p>
+				Please Enter the Moderator Password for "<span id="MEETINGNAME" style="font-weight: bold">[MEETING NAME]</span>":
+			</p>
+			<p>
+				<input type="password" id="passfield" value="">
+				<button onclick="ModPassScreen.submit()">
+					Login
+				</button>
+				<button onclick="ModPassScreen.goback()">
+					Go Back
+				</button>
+			</p>
+			<p>[MODPASS SCREEN]</p>
+			<p>[CREATE SCREEN]</p>
+			<p>
+				Before TOHRU can be used in a meeting, the meeting has to be registered and given a unique name. The name must be unique to all meetings registered on the server.
+				Once a name is registered it will be retained for 2 months after its last use (moderator login). If you want to preserve a meeting title please log in at least once every two months as a moderator.
+			</p>
+			<p>
+				Security:
+			</p>
+			<p>
+				If meetings are private and password-like protection is desired, simply use a longer name and/or append a unique password or passphrase to the end of the name (e.g. "ACME Monthly Meeting - 12&#G")
+			</p>
+			<p>
+				Enter Meeting Name:
+			</p>
+			<p id="meetingline">
+				Meeting Name: 
+				<input type="text" id="meetingfield" value="UserInfo.meeting">
+			</p>
+			<button onclick="CreateScreen.checkunique();">
+				Check Availability
+			</button>
+			<p>
+				Create Moderator Password:
+			</p>
+			<p id="passline">
+				<input type="password" id="passfield" value="">
+			</p>
+			<p id="buttonline">
+				<button onclick="CreateScreen.create();">
+					Create Meeting
+				</button>
+				<button onclick="CreateScreen.goback();">
+					Go Back
+				</button>
+			</p>
+			<!--
+				TODO: PUT IN EMAIL STUFF HERE
+			!-->
+			<p>[CREATE SCREEN]</p>
+			<p>[MAIN SCREEN]</p>
+			<div class="logomain">
+				<img class="logoimg" src="./images/TOHRU_Hand_crop.png" height=80px>
+				<div class="logotext">
+					<div class="logotitle">
+						TOHRU - Trace Online
+					</div>
+					<div class="logobottom">
+						Hand Raising Utility
+					</div>
+				</div>
+			</div>
+			<div id="controls" class="controlbox"></div>
+			<br/>
+			<div id="modcontrols"></div>
+			<p>
+				<div class="speakerbox">
+					<h3>Currently Speaking:</h3>
+					<div id="speaker">LOADING...</div>
+				</div>
+			</p>
+			<div id="theList">LOADING...</div>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<button onclick="MainScreen.userList();">
+				Full Attendance List
+			</button>
+			<button onclick="MainScreen.logOut();">
+				Log Out
+			</button>
+			<p>[MAIN SCREEN]</p>
+			<p>[CONTROLS-MAIN]</p>
+			<p>
+				Please add me to the queue to speak about:
+			</p>
+			<p>
+				<button class="commentbutton" onclick="MainScreen.raise('S');"><img src="./images/S_Icon.png" height=20 style="vertical-align:middle">
+					ame Topic
+				</button>
+			</p>
+			<p>
+				<button class="commentbutton" onclick="MainScreen.raise('N');"><img src="./images/N_Icon.png" height=20 style="vertical-align:middle">
+					ew Topic
+				</button>
+			</p>
+			<p>
+				<button class="commentbutton" onclick="MainScreen.raise('A');"><img src="./images/A_Icon.png" height=20 style="vertical-align:middle">
+					nswer to Question
+				</button>
+				 that was asked by speaker
+			</p>
+			<p>
+				<button class="commentbutton" onclick="MainScreen.raise('P');"><img src="./images/P_Icon.png" height=20 style="vertical-align:middle">
+					ropose Resolution
+				</button>
+				 addressing all issues
+			</p>
+			<p>
+				<input id="comment" type="text" style="font-size: 16px; color: #777777" size=30 value="Optional reminder/hint" onblur="if(this.value==''){this.value='Optional reminder/hint'; this.style.color='#777777';}" onfocus="if(this.value=='Optional reminder/hint'){this.value=''; this.style.color='#000000';}">
+			</p>
+			<p>[CONTROLS-MAIN]</p>
+			<p>[CONTROLS-DOWN]</p>
+			<p>
+				<button onclick="MainScreen.down();">
+					Lower Hand
+				</button>
+			</p>
+			<p>[CONTROLS-DOWN]</p>
+			<p>[CONTROLS-MODBOX]</p>
+			<div class="modbox">
+				<p>
+					<img src="./images/+_Icon.png" height=20 style="vertical-align:middle">
+					<button onclick="ModFunctions.suggest()">
+						Add Name Manually
+					</button>
+					<input id="suggestionbox" type="text">
+				</p>
+				<p>
+					<button onclick="ModFunctions.advance()">
+						Next Speaker
+					</button>
+					<button onclick="ModFunctions.modnext()">
+						Moderator Speaks Next
+					</button>
+				</p>
+			</div>
+			<p>[CONTROLS-MODBOX]</p>
+			<p>[MOD-LEGEND]</p>
+			<p>
+				Moderators Only:    
+				<img src="./images/Totop_Icon.png" height=20 style="vertical-align:middle">
+				= Promote to Speaker    
+				<img src="./images/Delete_Icon.png" height=20 style="vertical-align:middle">
+				= Delete from List
+			</p>
+			<p>[MOD-LEGEND]</p>
+		</div>
+	</body>
+</html>

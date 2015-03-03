@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>
+			testpage
+		</title>
+		<script type="text/javascript" src="/getthesockets"></script>
+		<script>
+			var socket = io(':3000');
+			socket.emit('chat message', 'hello');
+			/*$('form').submit(function(){
+				preventDefault();
+				socket.emit('chat message', $('#m').val());
+				$('#m').val('');
+				return false;
+			});*/
+			function A(){socket.emit('chat message', 'A');};
+			function B(){socket.emit('chat message', 'B');};
+			function C(){socket.emit('chat message', 'C');};
+			function D(){socket.emit('chat message', 'D');};
+			socket.on('beep', function()
+			{
+				$('#origin').append('<button onclick="$(\'#origin\').empty();">BEEP</button>');
+			});
+		</script>
+		<script type="text/javascript" src="javascripts/jquery.js"></script>
+		<script type="text/javascript" src="/javascripts/test.js"></script>
+		<style>
+.panel,.flip
+{
+padding:5px;
+text-align:center;
+background-color:#e5eecc;
+border:solid 1px #c3c3c3;
+}
+.panel
+{
+padding:50px;
+display:none;
+}
+		</style>
+	</head>
+	<body>
+		<div id="origin"></div>
+		<button onclick="A();">A</button>
+		<button onclick="B();">B</button>
+		<button onclick="C();">C</button>
+		<button onclick="D();">D</button>
+	</body>
+</html>
