@@ -347,7 +347,7 @@ var MainScreen = {
 		$('#controls').empty();
 		$('#modcontrols').empty();
 		$('#controls').append(PageLayout.controls.main);
-		if(UserInfo.hand.raised) $('#controls').append(PageLayout.controls.down);
+		if(UserInfo.hand.raised) $('#downbutton').append(PageLayout.controls.down);
 		if(UserInfo.isMod)
 		{
 			$('#modcontrols').append(PageLayout.controls.modbox);
@@ -358,21 +358,18 @@ var MainScreen = {
 	{
 		UserInfo.hand.type = raisetype;
 		if($('#comment').val() != 'Optional reminder/hint') UserInfo.hand.comment = $('#comment').val();
-		var rname = UserInfo.name;
-		if(UserInfo.isMod) rname = UserInfo.name + ' (Moderator)';
 		socket.emit('changehands', 'RAISE', {
-			name: rname,
+			name: UserInfo.name,
 			ID: UserInfo.ID,
 			type: UserInfo.hand.type,
 			comment: UserInfo.hand.comment
 		});
+		UserInfo.hand.comment = '';
 	},
 	down: function()
 	{
-		var rname = UserInfo.name;
-		if(UserInfo.isMod) rname = UserInfo.name + ' (Moderator)';
 		socket.emit('changehands', 'LOWER', {
-			name: rname,
+			name: UserInfo.name,
 			ID: UserInfo.ID
 		});
 	},
@@ -502,7 +499,7 @@ socket.on('updatelist', function(data)
 			}
 			else
 			{
-				$('#speaker').append('NO CURRENT SPEAKER');
+				$('#speaker').append('PEOPLE IN QUEUE');
 			}
 			var first = true;
 			data.hands.forEach(function(hand)
@@ -517,15 +514,15 @@ socket.on('updatelist', function(data)
 				}
 				if(hand.name==UserInfo.name && hand.ID==UserInfo.ID)
 				{
-					var redraw = UserInfo.hand.raised;
+					//var redraw = UserInfo.hand.raised;
 					UserInfo.hand.raised = true;
 					UserInfo.hand.type = hand.type;
-					UserInfo.hand.comment = hand.comment;
 					handup = true;
-					if(!redraw)
-					{
-						MainScreen.drawControls();
-					}
+					MainScreen.drawControls();
+					//if(!redraw)
+					//{
+					//	MainScreen.drawControls();
+					//}
 				}
 			});
 		}
