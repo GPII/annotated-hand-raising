@@ -411,8 +411,10 @@ function changehands(socket, command, data, reply)
 				else
 				{
 					var found = false;
+					var empty = true;
 					if(doc.hands.length > 0)
 					{
+						empty = false;
 						for(i = 0; i < doc.hands.length; i++)
 						{
 							if(doc.hands[i].name == data.name && doc.hands[i].ID == data.ID)
@@ -425,6 +427,16 @@ function changehands(socket, command, data, reply)
 					}
 					if(!found)
 					{
+						if(empty)
+						{
+							var blank = {
+								name: '',
+								ID: 0,
+								type: 'X',
+								comment: ''
+							};
+							doc.hands.push(blank);
+						}
 						var entry = {
 							name: data.name,
 							ID: data.ID,
@@ -458,6 +470,15 @@ function changehands(socket, command, data, reply)
 									comment: ''
 								};
 							}
+						}
+						var blanks = true;	//checks if list is entirely empty, if so scrubs blanks
+						for(i = 0; i < doc.hands.length; i++)
+						{
+							if(doc.hands[i].type != 'X') blanks = false;
+						}
+						if(blanks)
+						{
+							doc.hands = [];
 						}
 					}
 					console.log('<EVENT> user "' + socket.name + '" lowered hand of user "' + data.name + '"');

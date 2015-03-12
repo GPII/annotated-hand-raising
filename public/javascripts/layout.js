@@ -35,7 +35,7 @@ var PageLayout = {
 			AllSet = true;
 		});
 	},
-	genListing: function(uid, name, ID, type, comment, isMine, isMod)
+	genListing: function(uid, name, ID, type, comment, isMine, isMod)	//generates the list entries
 	{
 		var reply = '<p class="handlisting" id='+uid+'>';
 		if(isMod) reply += '<img src="./images/Delete_Icon.png" height=20 onclick="ModFunctions.forceDown(\''+name+'\', '+ID+');" style="vertical-align:middle">';
@@ -43,6 +43,7 @@ var PageLayout = {
 		if(isMod) reply += '<img src="./images/Totop_Icon.png" height=20 onclick="ModFunctions.toTop(\''+name+'\', '+ID+');" style="vertical-align:middle">';
 		if(isMine) reply += '<span style="color: blue">';
 		reply += '<span style="font-weight: bold">';
+		reply += '&nbsp &nbsp';
 		reply += name;
 		reply += '</span>';
 		reply += '  ';
