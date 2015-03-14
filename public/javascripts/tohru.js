@@ -357,7 +357,7 @@ var MainScreen = {
 	raise: function(raisetype)
 	{
 		UserInfo.hand.type = raisetype;
-		if($('#comment').val() != 'Optional reminder/hint') UserInfo.hand.comment = $('#comment').val();
+		if($('#comment').val() != 'Enter text, then press button') UserInfo.hand.comment = $('#comment').val();
 		socket.emit('changehands', 'RAISE', {
 			name: UserInfo.name,
 			ID: UserInfo.ID,
