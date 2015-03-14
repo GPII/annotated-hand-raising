@@ -1,5 +1,4 @@
-var nano = require('nano')('http://localhost:5984');	//local hosting
-//var nano = require('nano')('https://tohrutest:thisisthetohrupassword@tohrutest.couchappy.com:443');	//remote hosting
+var nano = require('nano')('http://localhost:5984');
 var nodemailer = require('nodemailer');
 var mail = nodemailer.createTransport(
 /*	{
