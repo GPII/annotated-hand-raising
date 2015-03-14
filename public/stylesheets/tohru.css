@@ -1,23 +1,7 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+body
+{
+	font-family: cantarell;
+}
 .indent
 {
 	margin-left: 2em;
@@ -48,33 +32,28 @@
 	top: -10px;
 }
 
-
-
-
-
-
-
 .entryfield
 {
 	margin-left: 1em;
 }
 .controlbox
 {
+	margin: 5px 0px;
 	max-width: 400px;
-	border-style: ridge;
 	padding: 5px;
+	border: 1px solid;
 }
 .controlbox p
 {
-	margin: 5px;
+	margin: 5px 0px;
 }
-.controlbox .commentbutton
+.commentbutton
 {
-	font-size: 14px;
+	font-size: 90%;
 }
 .modbox
 {
-	border-style: ridge;
+	border: 1px solid;
 	background-color: #CCCCCC;
 	max-width: 400px;
 	padding: 5px;
@@ -83,17 +62,26 @@
 {
 	background-color: #FFFF77	;
 	max-width: 400px;
-	border-style:ridge;
-	text-indent: 20px;
+	border: 1px solid;
+	margin: 0px 0px;
 	padding: 5px;
-	padding-bottom: 20px;
 }
-.speakerbox div
+
+.speakerbox p
 {
-	text-indent: 53px;
+	margin: 0px 0px;
+	text-align: center;
+}
+#speaker
+{
 	font-weight: bold;
+}
+#theList
+{
+	min-height: 100px;
 }
 .handlisting
 {
-	
+	margin: 1px;
+	padding: 1px;
 }
