@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 
-var nano = require('nano')('http://localhost:5984');
+var nano = require('nano')('http://database:5984');
 
 var routes = require('./routes/index');
 

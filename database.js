@@ -1,4 +1,4 @@
-var nano = require('nano')('http://localhost:5984');
+var nano = require('nano')('http://database:5984');
 var nodemailer = require('nodemailer');
 var mail = nodemailer.createTransport(
 /*	{
