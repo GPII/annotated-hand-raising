@@ -145,7 +145,7 @@
 			</div>
 			<div id="modcontrols"></div>
 			<div class="speakerbox">
-				<p>Currently Speaking: <span id="speaker">LOADING...</span></p>
+				<p>Currently Speaking: <span id="speaker">LOADING...</span><a href="#current-help" style="float: right"><img src="./images/question.png" height=20 style="vertical-align:middle" title="Participants can use the Currently Speaking box to see the name of the person currently speaking.  This is especially helpful to those who are deaf and following by captions or participants who do not know the voices of the speakers."></a></p>
 			</div>
 			<div id="theList">LOADING...</div>
 
@@ -169,12 +169,12 @@
 			</p>
 			<p>
 				<button class="commentbutton" onclick="MainScreen.raise('P');"><img src="./images/P_Icon.png" style="vertical-align:middle" height="20"> Proposal
-				</button>  (to <b>propose resolution</b>)<img src="./images/question.png" height=20 style="vertical-align:middle" title="The PROPOSAL button is intended to be used ONLY for a proposal that attempts to addresses all issues raised - not to argue resolution by simply adopting one position or another.">
+				</button>  (to <b>propose resolution</b>)<a href="#proposal-help"><img src="./images/question.png" height=20 style="vertical-align:middle" title="The PROPOSAL button is intended to be used ONLY for a proposal that attempts to addresses all issues raised - not to argue resolution by simply adopting one position or another."></a>
 			</p>
 			<br>
 			<p>
 			    Type text here and re-press button above  to add comment after name in list:<br>
-				<input id="comment" type="text" style="font-size: 16px; color: #777777" value="Optional reminder/hint" onblur="if(this.value==''){this.value='Optional reminder/hint'; this.style.color='#777777';}" onfocus="if(this.value=='Optional reminder/hint'){this.value=''; this.style.color='#000000';}"><img src="./images/question.png" height=20 style="vertical-align:middle" title="You can add a comment after your name in the list (to hint or remind you of your comment) by entering text in the Optional Reminder/Hint box  and then pressing (or re-pressing) on of the hand raise buttons.">
+				<input id="comment" type="text" style="font-size: 16px; color: #777777" value="Optional reminder/hint" onblur="if(this.value==''){this.value='Optional reminder/hint'; this.style.color='#777777';}" onfocus="if(this.value=='Optional reminder/hint'){this.value=''; this.style.color='#000000';}"><a href="#hint-help"><img src="./images/question.png" height=20 style="vertical-align:middle" title="You can add a comment after your name in the list (to hint or remind you of your comment) by entering text in the Optional Reminder/Hint box  and then pressing (or re-pressing) on of the hand raise buttons."></a>
 			</p>
 			<div id="downbutton"></div>
 			<p>[CONTROLS-MAIN]</p>
@@ -197,25 +197,39 @@
 					<button onclick="ModFunctions.advance()" style="float: left">
 						Next Speaker
 					</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="#speaking-help" style="float: right"><img src="./images/question.png" height=20 style="vertical-align:middle" title="When speaking as moderator - press the Speaking as Moderator button and it will pop you into the Currently Speaking box (and push the current speaker to top of queue). When you want to speak as a participant you can press the hand up button like everyone else and it will put you in line like everyone else. "></a>
 					<button onclick="ModFunctions.modnext()" style="float: right">
 						Speaking as a Moderator
 					</button>
+
 				</p>
 			</div><!-- modbox -->
 			<p>[CONTROLS-MODBOX]</p>
 			<p>[MOD-LEGEND]</p>
-			<div class="legend">
+			<div id="modlegend">
 				Moderators Only:    
 				<img src="./images/Totop_Icon.png" height=20 style="vertical-align:middle">
 				= Promote to Speaker    
 				<img src="./images/Delete_Icon.png" height=20 style="vertical-align:middle">
 				= Delete from List
+				<p>
+				When <a name="speaking-help">speaking as moderator</a> - press the <b>"Speaking as Moderator"</b> button and it will pop you into the Currently Speaking box (and push the current speaker to top of queue).   When you want to speak as a participant you can press the hand up button like everyone else and it will put you in line like everyone else.
+				</p>
 			</div>
 			<p>[MOD-LEGEND]</p>
 			<p>[LEGEND]</p>
-			<p>
-			Participants can use the "Currently Speaking" box to see the name of the person currently speaking.  This is especially helpful to those who are deaf and following by captions or participants who do not know the voices of the speakers.
-			<br>
+			<ol id="legend">
+			<li>
+			The <a name="proposal-help"><b>"Proposal"</b></a> button is intended to be used ONLY for a proposal that attempts to addresses all issues raised - not to argue resolution by simply adopting one position or another.
+			</li>
+			<li>
+			You can add a <a name="hint-help">comment</a> after your name in the list (to hint or remind you of your comment) by entering text in the <b>"Optional Reminder/Hint"</b> box  and then pressing (or re-pressing) on of the hand raise buttons.
+			</li>
+			<li>
+			Participants can use the <a name="current-help"><b>"Currently Speaking"</b></a> box to see the name of the person currently speaking.  This is especially helpful to those who are deaf and following by captions or participants who do not know the voices of the speakers.
+			</li>
+			</ol>
+			<p id="copyright">
 			This open source tool was developed by the Trace R&D Center at the University of Wisconsin-Madison to facilitate meeting participation by all users, the quick, the polite, those who use captions to follow a meeting, etc.
 			</p>
 			<p>[LEGEND]</p>

@@ -125,10 +125,21 @@ html,body
 	padding: 5px;
 }
 
-.legend
+#modlegend
 {
 	flex-shrink: 0;
 	margin: 5px 0px;
+	font-size: small;
+}
+#legend
+{
+	flex-shrink: 0;
+	font-size: small;
+}
+#copyright
+{
+	flex-shrink: 0;
+	font-size: smaller;
 }
 .handlisting
 {

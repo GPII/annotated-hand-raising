@@ -132,7 +132,7 @@ var cookies = {
 };
 
 AllSet = false;
-var socket = io(':3000');
+var socket = io(':80');
 var registered = false;
 var showList = false;
 var currentMOTD = '';
@@ -338,6 +338,7 @@ var MainScreen = {
 		$('#origin').empty();
 		$('#origin').append(PageLayout.MainScreen);
 		if(UserInfo.isMod) $('#origin').append(PageLayout.controls.modlegend);
+		$('#origin').append(PageLayout.controls.legend);
 		showList = true;
 		socket.emit('gimmelist');
 		this.drawControls();
