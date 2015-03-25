@@ -1,25 +1,20 @@
 html,body
 {
-	font-family: cantarell;
-	margin: 0px 5px;
-	height: 100%;
+	font-family: cantarell, sans-serif;
+	margin: 5px 5px;
 }
 
 #origin
 {
 	height: 100%;
-	display: flex;
-	flex-flow: column;
+
 }
 
 .indent
 {
 	margin-left: 2em;
 }
-.logomain
-{
-	flex-shrink: 0;
-}
+
 .logoimg
 {
 	display:inline-block;
@@ -52,7 +47,7 @@ html,body
 	max-width: 400px;
 	padding: 5px;
 	border: 1px solid;
-	flex-shrink: 0;
+
 }
 .controlbox p
 {
@@ -78,7 +73,7 @@ html,body
 	max-width: 400px;
 	padding: 5px;
 	margin: 0px 0px;
-	flex-shrink: 0;
+
 }
 
 .modbox p
@@ -92,7 +87,6 @@ html,body
 	border: 1px solid;
 	margin: 5px 0px;
 	padding: 5px;
-	flex-shrink: 0;
 }
 
 .speakerbox p
@@ -106,7 +100,6 @@ html,body
 
 	font-weight: bold;
 	margin: 20px;
-	flex-shrink: 0;
 }
 
 #theList
@@ -114,12 +107,10 @@ html,body
 	min-height: 100px;
 	padding: 5px;
 	margin-bottom: 5px;
-	flex-shrink: 0;
 }
 
 #ListButtons
 {
-	flex-shrink: 0;
 	margin: 5px 0px;
 	width: 400px;
 	padding: 5px;
@@ -127,18 +118,15 @@ html,body
 
 #modlegend
 {
-	flex-shrink: 0;
 	margin: 5px 0px;
 	font-size: small;
 }
 #legend
 {
-	flex-shrink: 0;
 	font-size: small;
 }
 #copyright
 {
-	flex-shrink: 0;
 	font-size: smaller;
 }
 .handlisting
